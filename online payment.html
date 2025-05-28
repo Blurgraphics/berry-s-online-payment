@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Payment Portal - Berry’s Closet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS Variables for easy theme adjustments */
+        :root {
+            --primary-color: #084586; /* A nice blue for accents */
+            --whatsapp-green: #25d366;
+            --whatsapp-green-dark: #1ebea5;
+            --light-blue-bg: #e3f2fd;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+            --white-color: #fff;
+            --shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --border-light: 1px solid #f0ffcc;
+        }
+
+        /* Basic body styling */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 20px;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for better scroll behavior */
+            min-height: 100vh; /* Ensure it takes full viewport height */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Main container for the portal */
+        .container {
+            background: var(--white-color);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-light);
+            max-width: 600px; /* Increased max-width for more content */
+            width: 90%; /* Fluid width for responsiveness */
+            margin: 40px auto; /* More vertical margin, auto for horizontal centering */
+            box-sizing: border-box;
+        }
+
+        /* Business name heading styling */
+        .business-name {
+            color: var(--primary-color);
+            font-size: 2.2em; /* Larger font size for prominence */
+            font-weight: 700;
+            margin-bottom: 30px; /* More space below the business name */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+            display: flex; /* Use flexbox for alignment of logo and text */
+            align-items: center; /* Vertically align items */
+            justify-content: center; 
+        }
+
+        
+        .business-logo-img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px; 
+            border-radius: 100%; 
+            object-fit: cover; 
+        }
+
+        h2, h3 {
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        
+        .payment-details {
+            background: var(--light-blue-bg);
+            padding: 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            border: var(--border-light);
+            transition: transform 0.2s ease-in-out; 
+        }
+
+        .payment-details:hover {
+            transform: translateY(-3px); 
+        }
+
+        
+        .bank-account {
+            background: var(--white-color);
+            padding: 15px;
+            margin-bottom: 15px; 
+            border-radius: 6px;
+            border: 1px solid #ddd; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            text-align: left; 
+        }
+
+        .bank-account:last-child {
+            margin-bottom: 0; 
+        }
+
+        .bank-account p {
+            margin: 8px 0;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        .bank-account strong {
+            color: #0056b3; 
+            display: inline-block; 
+            min-width: 120px; 
+        }
+
+        .whatsapp-link {
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            background: var(--whatsapp-green);
+            color: white;
+            padding: 15px 25px; 
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 50px; 
+            font-size: 18px; 
+            font-weight: 700; 
+            transition: background 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(37, 211, 102, 0.3); 
+        }
+
+        .whatsapp-link:hover {
+            background: var(--whatsapp-green-dark);
+            box-shadow: 0 6px 12px rgba(37, 211, 102, 0.4); 
+        }
+
+        .whatsapp-link img {
+            width: 24px; 
+            height: 24px;
+            margin-right: 10px;
+            
+        }
+
+        
+        p {
+            margin-bottom: 15px;
+        }
+
+        .disclaimer {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+            .business-name {
+                font-size: 1.8em;
+            }
+            .business-logo-img {
+                width: 32px;
+                height: 32px;
+            }
+            .whatsapp-link {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+            .whatsapp-link img { 
+                width: 20px;
+                height: 20px;
+            }
+            h2, h3 {
+                font-size: 1.5em;
+            }
+            .bank-account strong {
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="business-name">
+            <img src="bbc.png" alt="Business Logo" class="business-logo-img" onerror="this.onerror=null;this.src='https://placehold.co/40x40/cccccc/333333?text=Logo';">
+            Berry’s Closet
+        </h1>
+
+        <h2> Payment Details</h2>
+        <p>Please use one of the bank details below to make your payment. Ensure all details are correct to avoid delays.</p>
+
+        <div class="payment-details">
+            <div class="bank-account">
+                <p><strong>Bank Name:</strong> Access Bank</p>
+                <p><strong>Account Name:</strong> Ekwulugo Lovelyn Uchechi</p>
+                <p><strong>Account Number:</strong> 0082415704</p>
+            </div>
+
+            <div class="bank-account">
+                <p><strong>Bank Name:</strong> Stanbic IBTC</p>
+                <p><strong>Account Name:</strong> Ekwulugo Lovelyn Uchechi</p>
+                <p><strong>Account Number:</strong> 0026537101</p>
+            </div>
+
+            <div class="bank-account">
+                <p><strong>Bank Name:</strong> Moniepoint</p>
+                <p><strong>Account Name:</strong> Berry’s Closet or Lovelyn Uchechi</p>
+                <p><strong>Account Number:</strong> 9030850581</p>
+            </div>
+        </div>
+
+        <h3>Confirm Your Payment</h3>
+        <p>After a successful transaction, please send your payment receipt to us directly via WhatsApp for quick confirmation. This helps us process your order or service promptly.</p>
+        <a class="whatsapp-link" href="https://wa.me/+2348012345678?text=Hello,%20I%20am%20sending%20my%20payment%20receipt%20for%20a%20recent%20transaction.%20[Optional:%20Your%20Name/Order%20ID]" target="_blank" aria-label="Send payment receipt via WhatsApp">
+            <img src="whatsapp.png" alt="WhatsApp Icon" onerror="this.onerror=null;this.src='https://placehold.co/24x24/25d366/ffffff?text=WA';">
+            Chat on WhatsApp
+        </a>
+
+        <p class="disclaimer">Note: All transactions are secure and processed promptly.  We are not responsible for transfers to wrong account details. For any issues, please contact our support team.</p>
+    </div>
+
+</body>
+</html>
